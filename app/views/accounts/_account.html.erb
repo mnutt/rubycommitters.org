@@ -1,7 +1,7 @@
 <li class="account">
   <div class="picture">
     <div class="image-wrapper">
-      <% if File.exist?(Rails.root.join('public', 'images', 'people', 'lines', "#{account.username}.png").to_s) -%>
+      <% if account.has_picture? -%>
         <%= image_tag "people/lines/#{account.username}.png" -%>
       <% else -%>
         <%= image_tag "people/lines/fox#{@fox_count}.png" -%>

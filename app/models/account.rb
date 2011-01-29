@@ -6,6 +6,10 @@ class Account < ActiveRecord::Base
   has_many :portraits
   has_many :books
 
+  def has_picture?
+    File.exist?(Rails.root.join('public', 'images', 'people', 'lines', "#{username}.png").to_s)
+  end
+
   ###
   # Import +io+ object that contains a YAML representation of the
   # ruby-committers
